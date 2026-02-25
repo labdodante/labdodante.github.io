@@ -21,13 +21,29 @@
         </p>
     </div>
 
-    <div class="links">
-        <a href="https://www.youtube.com/@Dantelab79" target="_blank">YouTube</a>
-        <a href="https://x.com/labdodante" target="_blank">Twitter</a>
-        <a href="https://www.twitch.tv/oiadante" target="_blank">Twitch</a>
-        <a href="https://github.com/labdodante" target="_blank">GitHub</a>
-    </div>
+ <div class="links">
+    <a href="https://www.youtube.com/@Dantelab79" onclick="tocarSom(event)" target="_blank">YouTube</a>
+    <a href="https://x.com/labdodante" onclick="tocarSom(event)" target="_blank">Twitter</a>
+    <a href="https://www.twitch.tv/oiadante" onclick="tocarSom(event)" target="_blank">Twitch</a>
+    <a href="https://github.com/labdodante" onclick="tocarSom(event)" target="_blank">GitHub</a>
 </div>
 
+<audio id="somClick" src="Menu (Move).wav"></audio>
+    <script>
+function tocarSom(event) {
+    event.preventDefault();
+
+    let link = event.currentTarget.href;
+    let audio = document.getElementById("somClick");
+
+    audio.play();
+
+    audio.onended = function() {
+        window.open(link, "_blank");
+    };
+}
+</script>
+
 </body>
+
 </html>
