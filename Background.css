@@ -1,0 +1,94 @@
+/* IMPORTAÇÃO DE FONTE TÁTICA */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root {
+    --laranja-hud: #fdb96a;
+    --laranja-secundario: #cc6900dd;
+    --fundo-escuro: #0a0f0a;
+    --painel: #111a16;
+    --borda: #ffb61a;
+    --botao: #000000;
+}
+
+/* CONFIGURAÇÃO GLOBAL */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--fundo-escuro);
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--laranja-hud);
+}
+
+/* CONTAINER PRINCIPAL (FICHÁRIO) */
+.dossie {
+    width: 80%;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--painel);
+    border: 2px solid var(--borda);
+    box-shadow: 0 0 20px var(--laranja-secundario);
+    position: relative;
+}
+
+/* Linha decorativa estilo HUD */
+.dossie::before {
+    content: "H.I.P.E.R.I.O.N. // PESQUISA/ESTUDO NOTÓRIO";
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: var(--fundo-escuro);
+    padding: 0 10px;
+    color: var(--laranja-secundario);
+}
+
+/* TÍTULOS */
+h1, h2 {
+    border-bottom: 1px solid var(--borda);
+    padding-bottom: 5px;
+}
+
+/* BIOGRAFIA */
+.bio {
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+/* LINKS SOCIAIS */
+.links {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--laranja-hud);
+    border: 1px solid var(--borda);
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+.links a:hover {
+    background-color: var(--laranja-secundario);
+    color: black;
+    box-shadow: 0 0 10px var(--laranja-hud);
+}
+
+/* BOTÕES*/
+.botao {
+    margin-top: 30px;
+    display: inline-block;
+    padding: 12px 20px;
+    border: 2px solid var(--borda);
+    background-color: #000000;
+    color: var(--botao);
+    text-decoration: none;
+    transition: ease 0.3s;
+}
+
+.botao:hover {
+    background-color: var(--laranja-hud);
+    color: black;
+    box-shadow: 0 0 15px var(--laranja-hud);
+}

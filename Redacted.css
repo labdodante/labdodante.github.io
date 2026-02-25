@@ -1,0 +1,44 @@
+.redacted {
+    position: relative;
+    color: var(--laranja-hud);
+    animation: glitchReveal 2.5s infinite;
+}
+
+/* Camada preta cobrindo */
+.redacted::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: black;
+    animation: fadeReveal 2.5s infinite ease-in-out;
+}
+
+/* Controle da cobertura */
+@keyframes fadeReveal {
+    0%, 60%  { opacity: 1; }
+    70%, 80% { opacity: 0; } /* período visível */
+    90%,100% { opacity: 1; }
+}
+
+/* Glitch só ativa no período visível */
+@keyframes glitchReveal {
+    0%, 60% {
+        text-shadow: none;
+    }
+
+    70% {
+        text-shadow: 3px 0 orange, -3px 0 darkgreen;
+    }
+
+    75% {
+        text-shadow: -3px 2px orange, 3px -2px darkgreen;
+    }
+
+    80% {
+        text-shadow: 0 0 8px var(--verde-hud);
+    }
+
+    90%,100% {
+        text-shadow: none;
+    }
+}
