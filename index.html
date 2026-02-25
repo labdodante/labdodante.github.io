@@ -28,8 +28,15 @@ Sistema de Monitoramento da
 <audio id="somClick" src="Menu (Move).wav"></audio>
 
 <script>
-function tocarSom() {
-    document.getElementById("somClick").play();
+function tocarSom(event) {
+    event.preventDefault();
+
+    let audio = document.getElementById("somClick");
+    audio.play();
+
+    audio.onended = function() {
+        window.location.href = "status.html";
+    };
 }
 </script>
 </div>
